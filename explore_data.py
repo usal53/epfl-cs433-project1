@@ -1,6 +1,8 @@
 from helpers import load_csv_data
 
-x_train, x_test, y_train, train_ids, test_ids = load_csv_data("data/dataset_to_release/dataset")
+x_train, x_test, y_train, train_ids, test_ids = load_csv_data(
+    "data/dataset_to_release/dataset"
+)
 
 print("x_train :", x_train.shape)
 print("y_train :", y_train.shape)

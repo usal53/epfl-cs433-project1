@@ -2,13 +2,13 @@
 
 import numpy as np
 
-
 # ---------- Helpers: linear regression ----------
+
 
 def compute_mse_loss(y, tx, w):
     """MSE with the 1/2 factor required by the project."""
     errors = y - tx @ w
-    return 0.5 * np.mean(errors ** 2)
+    return 0.5 * np.mean(errors**2)
 
 
 def compute_mse_gradient(y, tx, w):
@@ -18,6 +18,7 @@ def compute_mse_gradient(y, tx, w):
 
 
 # ---------- 1. Linear regression: Gradient Descent ----------
+
 
 def mean_squared_error_gd(y, tx, initial_w, max_iters, gamma):
     """Fit linear regression by full-batch gradient descent."""
@@ -31,6 +32,7 @@ def mean_squared_error_gd(y, tx, initial_w, max_iters, gamma):
 
 
 # ---------- 2. Linear regression: Stochastic Gradient Descent ----------
+
 
 def mean_squared_error_sgd(y, tx, initial_w, max_iters, gamma):
     """Fit linear regression with one randomly sampled row per step."""
@@ -48,6 +50,7 @@ def mean_squared_error_sgd(y, tx, initial_w, max_iters, gamma):
 
 # ---------- 3. Linear regression: Least Squares ----------
 
+
 def least_squares(y, tx):
     """Solve the normal equations for ordinary least squares."""
     a = tx.T @ tx
@@ -62,6 +65,7 @@ def least_squares(y, tx):
 
 
 # ---------- 4. Linear regression: Ridge Regression ----------
+
 
 def ridge_regression(y, tx, lambda_):
     """Solve ridge normal equations, regularizing all coefficients."""
@@ -78,6 +82,7 @@ def ridge_regression(y, tx, lambda_):
 
 
 # ---------- Helpers: logistic regression ----------
+
 
 def sigmoid(t):
     """Numerically stable sigmoid."""
@@ -99,6 +104,7 @@ def calculate_logistic_gradient(y, tx, w):
 
 # ---------- 5. Logistic Regression ----------
 
+
 def logistic_regression(y, tx, initial_w, max_iters, gamma):
     """Fit logistic regression by full-batch gradient descent."""
     w = np.asarray(initial_w, dtype=float).copy()
@@ -111,6 +117,7 @@ def logistic_regression(y, tx, initial_w, max_iters, gamma):
 
 
 # ---------- 6. Regularized Logistic Regression ----------
+
 
 def reg_logistic_regression(y, tx, lambda_, initial_w, max_iters, gamma):
     """Fit L2-regularized logistic regression by gradient descent."""
